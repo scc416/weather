@@ -1,4 +1,12 @@
-# weather
+# Weather
+
+## things to displayed
+- show current weather condition
+- current temperature
+- daily temperature for the coming week
+- show hourly temperature for next 24 hours as line graph with sunset/sunrise
+
+optional: humidity, rainfall, snowdepth, wind speed, apparent temperature
 
 ## Project setup
 ```
