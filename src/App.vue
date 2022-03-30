@@ -1,7 +1,7 @@
 <template>
   <img class="cover" src="./assets/backgrounds/foggy.png" alt="" />
   <div class="cover-gradient">
-    <div class="cover-gradient-top"></div>
+    <div class="cover-gradient-top">{{ location }}</div>
     <div class="cover-gradient-bottom"></div>
   </div>
 </template>
@@ -12,7 +12,7 @@ import getWeather from "./composables/getWeather";
 export default {
   setup() {
     const { error, location } = getWeather();
-    return { error };
+    return { error, location };
   },
 };
 </script>
@@ -21,6 +21,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 * {
