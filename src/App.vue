@@ -1,8 +1,12 @@
 <template></template>
 
 <script>
+import getWeather from "./composables/getWeather";
+
 export default {
-  name: "App",
+  setup() {
+    getWeather();
+  },
 };
 </script>
 
