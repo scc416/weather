@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ref } from "vue";
 import { errorHandle, getUrls, formatLocationStr } from "@/helpers";
+import { geoLocationOptions } from "@/constants";
 
 const getWeather = () => {
   const error = ref("");
@@ -8,10 +9,7 @@ const getWeather = () => {
 
   navigator.geolocation.getCurrentPosition(
     async (position) => {
-      const { coords } = position;
-      const { latitude: lat, longitude: long } = coords;
-      const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
-      const { weatherUrl, locationUrl } = getUrls(lat, long, timeZone);
+      const { weatherUrl, locationUrl } = getUrls(position);
 
       try {
         const { data: weatherData } = await axios.get(weatherUrl);
@@ -25,7 +23,7 @@ const getWeather = () => {
       }
     },
     (e) => errorHandle(error, e),
-    { enableHighAccuracy: true, timeout: 5000 }
+    geoLocationOptions
   );
 
   return { error, location };
