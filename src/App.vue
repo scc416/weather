@@ -1,11 +1,14 @@
-<template></template>
+<template>
+  <div v-if="error">{{ error }}</div>
+</template>
 
 <script>
 import getWeather from "./composables/getWeather";
 
 export default {
   setup() {
-    getWeather();
+    const { error } = getWeather();
+    return { error };
   },
 };
 </script>
