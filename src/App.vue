@@ -1,6 +1,4 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-</template>
+<template></template>
 
 <script>
 export default {
