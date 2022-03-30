@@ -8,6 +8,10 @@
 
 optional: humidity, rainfall, snowdepth, wind speed, apparent temperature
 
+## Credits
+
+- [Weather Cards](https://ui8.net/salmanwap/products/weather-app-cards) from [UI8](https://ui8.net/)
+
 ## Project setup
 ```
 npm install
