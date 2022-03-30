@@ -1,9 +1,13 @@
 <template>
   <img class="cover" src="./assets/backgrounds/foggy.png" alt="" />
   <div class="cover-gradient">
-    <div class="cover-gradient-top">{{ location }}</div>
+    <div class="cover-gradient-top">
+      <div>20</div>
+      <div>{{ location }}</div>
+    </div>
     <div class="cover-gradient-bottom"></div>
   </div>
+  <div class="content">hello</div>
 </template>
 
 <script>
@@ -22,6 +26,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  font-family: "Montserrat";
 }
 
 * {
@@ -38,6 +43,7 @@ body {
   top: 40vw;
   left: 0;
   width: 100vw;
+  z-index: 0;
 }
 
 .cover-gradient-top {
@@ -45,8 +51,23 @@ body {
   height: 80vw;
 }
 
+.cover-gradient-top > div:first-child {
+  font-size: 3em;
+}
+
+.cover-gradient-top > div:nth-child(2) {
+  font-family: "Hind";
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
 .cover-gradient-bottom {
-  height: 20vw;
+  height: 15vw;
   background: #ffffff;
+}
+
+.content {
+  position: relative;
+  bottom: 20vw;
 }
 </style>
