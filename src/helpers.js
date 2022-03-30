@@ -8,3 +8,7 @@ export const getUrls = (lat, long, timeZone) => {
   const locationUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`;
   return { weatherUrl, locationUrl };
 };
+
+export const formatLocationStr = ({ countryName, city }) => {
+  return `${city}, ${countryName}`;
+};

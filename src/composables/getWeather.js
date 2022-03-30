@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ref } from "vue";
-import { errorHandle, getUrls } from "@/helpers";
+import { errorHandle, getUrls, formatLocationStr } from "@/helpers";
 
 const getWeather = () => {
   const error = ref("");
@@ -15,13 +15,11 @@ const getWeather = () => {
 
       try {
         const { data: weatherData } = await axios.get(weatherUrl);
-        const {
-          data: { countryName, city },
-        } = await axios.get(locationUrl);
+        const { data: locationData } = await axios.get(locationUrl);
 
-        location.value = `${city}, ${countryName}`;
+        location.value = formatLocationStr(locationData);
 
-        console.log(weatherData, countryName, city);
+        console.log(weatherData);
       } catch (e) {
         errorHandle(error, e);
       }
