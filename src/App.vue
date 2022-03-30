@@ -34,18 +34,18 @@ body {
 
 .cover-gradient {
   position: absolute;
-  top: 20vh;
+  top: 40vw;
   left: 0;
   width: 100vw;
 }
 
 .cover-gradient-top {
   background-image: linear-gradient(to bottom, #ffffff00, #ffffffff);
-  height: 45vh;
+  height: 80vw;
 }
 
 .cover-gradient-bottom {
-  height: 20vh;
+  height: 20vw;
   background: #ffffff;
 }
 </style>
