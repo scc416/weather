@@ -37,6 +37,7 @@ import Header from "./Header.vue";
 
 export default {
   props: ["data"],
+  components: { Header },
   setup() {},
 };
 </script>
