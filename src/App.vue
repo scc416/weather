@@ -2,13 +2,23 @@
   <img class="cover" src="./assets/backgrounds/foggy.png" alt="" />
   <div class="cover-gradient">
     <div class="cover-gradient-top">
-      <div>{{ temperature }}</div>
+      <div>
+        {{ temperature }}
+        <span class="unit">{{ temperatureUnit }}</span>
+      </div>
       <div>{{ location }}</div>
     </div>
     <div class="cover-gradient-bottom"></div>
   </div>
   <div class="content">
-    {{ precipitation }}{{ humidity }}{{ windSpeed }}{{ snowDepth }}
+    {{ precipitation }}
+    <span class="unit">{{ precipitationUnit }}</span>
+    {{ humidity }}
+    <span class="unit">{{ humidityUnit }}</span>
+    {{ windSpeed }}
+    <span class="unit">{{ windSpeedUnit }}</span>
+    {{ snowDepth }}
+    <span class="unit">{{ snowDepthUnit }}</span>
   </div>
 </template>
 
@@ -17,35 +27,8 @@ import getWeather from "./composables/getWeather";
 
 export default {
   setup() {
-    const {
-      error,
-      location,
-      temperature,
-      precipitation,
-      humidity,
-      windSpeed,
-      snowDepth,
-      temperatureUnit,
-      precipitationUnit,
-      humidityUnit,
-      windSpeedUnit,
-      snowDepthUnit,
-    } = getWeather();
-
-    return {
-      error,
-      location,
-      temperature,
-      precipitation,
-      humidity,
-      windSpeed,
-      snowDepth,
-      temperatureUnit,
-      precipitationUnit,
-      humidityUnit,
-      windSpeedUnit,
-      snowDepthUnit,
-    };
+    const data = getWeather();
+    return data;
   },
 };
 </script>
@@ -98,5 +81,11 @@ body {
 .content {
   position: relative;
   bottom: 20vw;
+}
+
+span.unit {
+  font-size: 0.6em;
+  position: relative;
+  bottom: 0.1em;
 }
 </style>
