@@ -37,21 +37,24 @@
 import Header from "./Header.vue";
 
 const { data } = defineProps(["data"]);
-const { today } = data;
+const { today, unit } = data;
 const {
-  snowDepthUnit,
   snowDepth,
   windSpeed,
-  windSpeedUnit,
   temperature,
-  temperatureUnit,
   location,
   precipitation,
-  precipitationUnit,
   humidity,
-  humidityUnit,
   weatherCode,
 } = today;
+
+const {
+  snowDepthUnit,
+  windSpeedUnit,
+  temperatureUnit,
+  precipitationUnit,
+  humidityUnit,
+} = unit;
 </script>
 
 <style>

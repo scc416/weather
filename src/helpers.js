@@ -35,14 +35,28 @@ const getCurrentTimeIndex = ({ hourly: { time } }) => {
   }
 };
 
+const makeWeeklyWeatherDate = (code, maxT, minT, time) => {
+  const result = [];
+  const length = time.length;
+  for (let i = 0; i < length; i++) {
+    const data = {
+      weatherCode: code[i],
+      maxTemp: maxT[i],
+      minTemp: minT[i],
+      day: i === 0 ? "Today" : moment(time[i]).format("ddd"),
+    };
+    result.push(data);
+  }
+  return result;
+};
+
 export const formatWeatherData = (weatherData) => {
-  console.log(weatherData);
   const i = getCurrentTimeIndex(weatherData);
   const {
     daily: {
       weathercode: weatherCodeWeek,
-      temperature_2m_max: temperatuceMax,
-      temperature_2m_min: temperatuceMin,
+      temperature_2m_max: maxTemp,
+      temperature_2m_min: minTemp,
       time: dateWeek,
     },
     hourly_units: {
@@ -62,23 +76,33 @@ export const formatWeatherData = (weatherData) => {
     },
   } = weatherData;
 
-  const weekly = [];
+  const weekly = makeWeeklyWeatherDate(
+    weatherCodeWeek,
+    maxTemp,
+    minTemp,
+    dateWeek
+  );
+
+  console.log(weekly);
 
   const today = {
     temperature: temperature[i],
-    temperatureUnit,
     precipitation: precipitation[i],
-    precipitationUnit,
     humidity: humidity[i],
-    humidityUnit,
     windSpeed: windSpeed[i],
-    windSpeedUnit,
     snowDepth: snowDepth[i],
-    snowDepthUnit,
     weatherCode: weathercode[i],
   };
 
-  return { weekly, today };
+  const unit = {
+    temperatureUnit,
+    precipitationUnit,
+    humidityUnit,
+    windSpeedUnit,
+    snowDepthUnit,
+  };
+
+  return { weekly, today, unit };
 };
 
 export const getWeatherIcon = (code) => {
