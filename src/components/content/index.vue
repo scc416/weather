@@ -1,16 +1,38 @@
 <template>
   <div class="content">
-    {{ data.temperature }}
-    {{ data.temperatureUnit }}
-    {{ data.location }}
-    {{ data.precipitation }}
-    {{ data.precipitationUnit }}
-    {{ data.humidity }}
-    {{ data.humidityUnit }}
-    {{ data.windSpeed }}
-    {{ data.windSpeedUnit }}
-    {{ data.snowDepth }}
-    {{ data.snowDepthUnit }}
+    <div>
+      {{ data.temperature }}
+    </div>
+    <div>
+      {{ data.temperatureUnit }}
+    </div>
+    <div>
+      {{ data.location }}
+    </div>
+    <div>
+      {{ data.precipitation }}
+    </div>
+    <div>
+      {{ data.precipitationUnit }}
+    </div>
+    <div>
+      {{ data.humidity }}
+    </div>
+    <div>
+      {{ data.humidityUnit }}
+    </div>
+    <div>
+      {{ data.windSpeed }}
+    </div>
+    <div>
+      {{ data.windSpeedUnit }}
+    </div>
+    <div>
+      {{ data.snowDepth }}
+    </div>
+    <div>
+      {{ data.snowDepthUnit }}
+    </div>
   </div>
 </template>
 

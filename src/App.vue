@@ -1,5 +1,5 @@
 <template>
-  <Cover :code="data && data.weatherCode" />
+  <Cover v-if="data" :code="data && data.weatherCode" />
   <Content v-if="data" :data="data" />
   <Spin v-if="!data" :error="error" />
 </template>
@@ -26,7 +26,6 @@ body {
   text-align: center;
   font-family: "Montserrat";
   width: 100vw;
-  overflow: hidden;
 }
 
 #app {
