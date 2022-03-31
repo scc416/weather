@@ -1,5 +1,5 @@
 <template>
-  <img src="./assets/backgrounds/foggy.png" alt="" />
+  <img src="../../assets/backgrounds/foggy.png" alt="" />
 </template>
 
 <script>
