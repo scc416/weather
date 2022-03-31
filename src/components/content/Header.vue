@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="weather-icon"><SunIcon /></div>
+    <div class="weather-icon"><component :is="icon" /></div>
     <div class="temperature">
       <span>
         {{ temperature }}
@@ -12,9 +12,16 @@
 </template>
 
 <script setup>
-import SunIcon from "vue-material-design-icons/WhiteBalanceSunny.vue";
+import { getWeatherIcon } from "@/helpers";
 
-defineProps(["temperature", "temperatureUnit", "location"]);
+const { weatherCode } = defineProps([
+  "temperature",
+  "temperatureUnit",
+  "location",
+  "weatherCode",
+]);
+
+const icon = getWeatherIcon(weatherCode);
 </script>
 
 <style>

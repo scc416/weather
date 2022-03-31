@@ -1,4 +1,5 @@
 import moment from "moment";
+import SunIcon from "vue-material-design-icons/WhiteBalanceSunny.vue";
 
 export const errorHandle = (eRef, error) => {
   const { message } = error;
@@ -59,4 +60,8 @@ export const formatWeatherData = (weatherData) => {
     snowDepthUnit,
     weatherCode: weathercode[i],
   };
+};
+
+export const getWeatherIcon = (code) => {
+  return SunIcon;
 };
