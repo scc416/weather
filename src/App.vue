@@ -1,8 +1,5 @@
 <template>
-  <CoverImage :code="data.weatherCode" />
-  <Rain v-if="true" />
-  <Wave />
-
+  <Cover :code="weatherCode" />
   <div class="content">
     {{ data.temperature }}
     {{ data.temperatureUnit }}
@@ -20,16 +17,14 @@
 
 <script>
 import getWeather from "./composables/getWeather";
-import Rain from "./components/cover/Rain.vue";
-import Wave from "./components/cover/Wave.vue";
-import CoverImage from "./components/cover/CoverImage.vue";
+import Cover from "./components/cover/";
 
 export default {
   setup() {
     const data = getWeather();
     return data;
   },
-  components: { Rain, CoverImage, Wave },
+  components: { Cover },
 };
 </script>
 
