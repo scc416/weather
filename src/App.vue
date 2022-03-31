@@ -1,5 +1,5 @@
 <template>
-  <Cover v-if="data" :code="data.weatherCode" :rain="true" />
+  <Cover v-if="data" :code="data.weatherCode" />
   <Content v-if="data" :data="data" />
   <Spin v-if="!data" :error="error" />
 </template>
