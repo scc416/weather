@@ -23,7 +23,7 @@ export default { props: ["error"] };
   justify-content: center;
   align-items: center;
   z-index: 1;
-  background: #000;
+  background: #c37e93;
   color: #fff;
 }
 
