@@ -1,14 +1,10 @@
 <template>
   <div class="content">
-    <div>
-      {{ data.temperature }}
-    </div>
-    <div>
-      {{ data.temperatureUnit }}
-    </div>
-    <div>
-      {{ data.location }}
-    </div>
+    <Header
+      :temperature="data.temperature"
+      :temperatureUnit="data.temperatureUnit"
+      :location="data.location"
+    />
     <div>
       {{ data.precipitation }}
     </div>
@@ -37,6 +33,8 @@
 </template>
 
 <script>
+import Header from "./Header.vue";
+
 export default {
   props: ["data"],
   setup() {},
