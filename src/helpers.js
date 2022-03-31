@@ -1,5 +1,12 @@
 import moment from "moment";
 import SunIcon from "vue-material-design-icons/WhiteBalanceSunny.vue";
+import CloudIcon from "vue-material-design-icons/CloudOutline.vue";
+import OvercastIcon from "vue-material-design-icons/Cloud.vue";
+import FogIcon from "vue-material-design-icons/WeatherFog.vue";
+import DrizzleIcon from "vue-material-design-icons/WeatherRainy.vue";
+import RainIcon from "vue-material-design-icons/WeatherPouring.vue";
+import SnowIcon from "vue-material-design-icons/Snowflake.vue";
+import ThunderIcon from "vue-material-design-icons/WeatherLightning.vue";
 
 export const errorHandle = (eRef, error) => {
   const { message } = error;
@@ -63,5 +70,42 @@ export const formatWeatherData = (weatherData) => {
 };
 
 export const getWeatherIcon = (code) => {
-  return SunIcon;
+  switch (code) {
+    case 0:
+    case 1:
+      return SunIcon;
+    case 2:
+      return CloudIcon;
+    case 3:
+      return OvercastIcon;
+    case 45:
+    case 48:
+      return FogIcon;
+    case 51:
+    case 53:
+    case 56:
+    case 61:
+    case 66:
+    case 80:
+      return DrizzleIcon;
+    case 55:
+    case 57:
+    case 63:
+    case 65:
+    case 67:
+    case 81:
+    case 82:
+      return RainIcon;
+    case 71:
+    case 73:
+    case 75:
+    case 77:
+    case 85:
+    case 86:
+      return SnowIcon;
+    case 95:
+    case 96:
+    case 99:
+      return ThunderIcon;
+  }
 };
