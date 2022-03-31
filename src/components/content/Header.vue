@@ -1,7 +1,6 @@
 <template>
   <div class="header">
-    <div>
-    </div>
+    <div><MenuIcon /></div>
     <div class="temperature">
       <span>
         {{ temperature }}
@@ -13,8 +12,13 @@
 </template>
 
 <script>
+import MenuIcon from "vue-material-design-icons/Menu.vue";
+
 export default {
   props: ["temperature", "temperatureUnit", "location"],
+  components: {
+    MenuIcon,
+  },
 };
 </script>
 
