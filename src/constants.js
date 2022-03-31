@@ -1,1 +1,1 @@
-export const geoLocationOptions = { enableHighAccuracy: true, timeout: 10000 };
+export const geoLocationOptions = { timeout: 10000 };

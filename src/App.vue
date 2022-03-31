@@ -2,12 +2,14 @@
   <img class="cover" src="./assets/backgrounds/foggy.png" alt="" />
   <div class="cover-gradient">
     <div class="cover-gradient-top">
-      <div>20</div>
+      <div>{{ temperature }}</div>
       <div>{{ location }}</div>
     </div>
     <div class="cover-gradient-bottom"></div>
   </div>
-  <div class="content">hello</div>
+  <div class="content">
+    {{ precipitation }}{{ humidity }}{{ windSpeed }}{{ snowDepth }}
+  </div>
 </template>
 
 <script>
@@ -15,8 +17,35 @@ import getWeather from "./composables/getWeather";
 
 export default {
   setup() {
-    const { error, location } = getWeather();
-    return { error, location };
+    const {
+      error,
+      location,
+      temperature,
+      precipitation,
+      humidity,
+      windSpeed,
+      snowDepth,
+      temperatureUnit,
+      precipitationUnit,
+      humidityUnit,
+      windSpeedUnit,
+      snowDepthUnit,
+    } = getWeather();
+
+    return {
+      error,
+      location,
+      temperature,
+      precipitation,
+      humidity,
+      windSpeed,
+      snowDepth,
+      temperatureUnit,
+      precipitationUnit,
+      humidityUnit,
+      windSpeedUnit,
+      snowDepthUnit,
+    };
   },
 };
 </script>
