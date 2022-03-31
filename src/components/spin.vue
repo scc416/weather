@@ -2,7 +2,7 @@
   <div class="fullscreen">
     <span v-if="!error" class="spin"></span>
     <div v-else>
-      <div>ERROR</div>
+      <div class="error">Error</div>
       <div>{{ error }}</div>
     </div>
   </div>
@@ -13,6 +13,10 @@ export default { props: ["error"] };
 </script>
 
 <style>
+.error {
+  font-size: 1.3em;
+}
+
 .fullscreen {
   position: absolute;
   top: 0;
