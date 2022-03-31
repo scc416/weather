@@ -5,26 +5,27 @@
     {{ data.temperatureUnit }}
     {{ data.location }}
     {{ data.precipitation }}
-    <span class="unit">{{ data.precipitationUnit }}</span>
+    {{ data.precipitationUnit }}
     {{ data.humidity }}
-    <span class="unit">{{ data.humidityUnit }}</span>
+    {{ data.humidityUnit }}
     {{ data.windSpeed }}
-    <span class="unit">{{ data.windSpeedUnit }}</span>
+    {{ data.windSpeedUnit }}
     {{ data.snowDepth }}
-    <span class="unit">{{ data.snowDepthUnit }}</span>
+    {{ data.snowDepthUnit }}
   </div>
 </template>
 
 <script>
 import getWeather from "./composables/getWeather";
 import Cover from "./components/cover/";
+import Content from "./components/content/";
 
 export default {
   setup() {
     const data = getWeather();
     return data;
   },
-  components: { Cover },
+  components: { Cover, Content },
 };
 </script>
 
@@ -35,7 +36,7 @@ body {
   text-align: center;
   font-family: "Montserrat";
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #app {
@@ -44,16 +45,5 @@ body {
 
 * {
   box-sizing: border-box;
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-}
-
-.unit {
-  font-size: 0.6em;
-  position: relative;
-  bottom: 0.1em;
 }
 </style>

@@ -16,10 +16,8 @@ export default {};
   left: -5vw;
   z-index: 0;
   color: #fff;
-}
-
-.wave {
   height: 0;
+  overflow-y: visible;
 }
 
 .wave:before {
