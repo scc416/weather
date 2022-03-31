@@ -1,12 +1,10 @@
 <template>
-  <Cover v-if="data" :code="data.weatherCode" />
   <Content v-if="data" :data="data" />
-  <Spin v-if="!data" :error="error" />
+  <Spin v-else :error="error" />
 </template>
 
 <script>
 import getWeather from "./composables/getWeather";
-import Cover from "./components/cover/";
 import Content from "./components/content/";
 import Spin from "./components/spin.vue";
 
@@ -15,7 +13,7 @@ export default {
     const { error, data } = getWeather();
     return { error, data };
   },
-  components: { Cover, Content, Spin },
+  components: { Content, Spin },
 };
 </script>
 
