@@ -12,16 +12,14 @@ export default {};
 .cover-gradient {
   position: relative;
   width: 110vw;
-  top: 20vw;
-  left: -5vw;
+  left: -8vw;
   z-index: 0;
   color: #fff;
   height: 0;
   overflow-y: visible;
 }
 
-.wave:before {
-  border-bottom: 15vw solid #fff;
+.wave::before {
   content: "";
   position: absolute;
   left: 0;
@@ -30,23 +28,22 @@ export default {};
   height: 30vw;
   background-size: 60vw 120vw;
   background-image: radial-gradient(
-    circle at 30vw -45vw,
+    circle at 31vw -45vw,
     transparent 60vw,
     #fff 63vw
   );
 }
 
-.wave:after {
-  border-bottom: 15vw solid #fff;
+.wave::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 45vw;
+  height: 48vw;
   background-size: 120vw 120vw;
   background-image: radial-gradient(
-    circle at 30vw 78vw,
+    circle at 24vw 75vw,
     #fff 60vw,
     transparent 63vw
   );
