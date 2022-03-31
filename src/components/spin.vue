@@ -8,8 +8,8 @@
   </div>
 </template>
 
-<script>
-export default { props: ["error"] };
+<script setup>
+defineProps(["error"]);
 </script>
 
 <style>
@@ -26,7 +26,6 @@ export default { props: ["error"] };
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
   background: #c37e93;
   color: #fff;
 }

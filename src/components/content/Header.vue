@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div><MenuIcon /></div>
+    <div class="weather-icon"><SunIcon /></div>
     <div class="temperature">
       <span>
         {{ temperature }}
@@ -11,15 +11,10 @@
   </div>
 </template>
 
-<script>
-import MenuIcon from "vue-material-design-icons/Menu.vue";
+<script setup>
+import SunIcon from "vue-material-design-icons/WhiteBalanceSunny.vue";
 
-export default {
-  props: ["temperature", "temperatureUnit", "location"],
-  components: {
-    MenuIcon,
-  },
-};
+defineProps(["temperature", "temperatureUnit", "location"]);
 </script>
 
 <style>
@@ -30,15 +25,22 @@ export default {
   justify-content: flex-end;
 }
 
-.header img {
-  width: 2.5em;
+.weather-icon .material-design-icon {
+  height: 3em;
+  width: 3em;
+  color: #f1b4c4;
+}
+
+.weather-icon .material-design-icon > .material-design-icon__svg {
+  height: 3em;
+  width: 3em;
 }
 
 .temperature {
   position: relative;
   color: #e36968;
   font-size: 2.5em;
-  margin: 0.25em 0 0.1em;
+  margin: 0.1em 0 0.1em;
   font-weight: 700;
 }
 

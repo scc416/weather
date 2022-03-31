@@ -3,18 +3,12 @@
   <Spin v-else :error="error" />
 </template>
 
-<script>
+<script setup>
 import getWeather from "./composables/getWeather";
 import Content from "./components/content/";
 import Spin from "./components/spin.vue";
 
-export default {
-  setup() {
-    const { error, data } = getWeather();
-    return { error, data };
-  },
-  components: { Content, Spin },
-};
+const { error, data } = getWeather();
 </script>
 
 <style>

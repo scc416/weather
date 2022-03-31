@@ -4,6 +4,7 @@
       :temperature="data.temperature"
       :temperatureUnit="data.temperatureUnit"
       :location="data.location"
+      :weatherCode="data.weatherCode"
     />
     <div>
       {{ data.precipitation }}
@@ -32,14 +33,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Header from "./Header.vue";
 
-export default {
-  props: ["data"],
-  components: { Header },
-  setup() {},
-};
+defineProps(["data"]);
 </script>
 
 <style>
