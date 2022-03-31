@@ -31,11 +31,11 @@ export const formatWeatherData = (weatherData) => {
   const i = getCurrentTimeIndex(weatherData);
   const {
     hourly_units: {
-      temperature_2m: temperatureUnitData,
-      precipitation: precipitationUnitData,
-      relativehumidity_2m: humidityUnitData,
-      windspeed_10m: windSpeedUnitData,
-      snow_depth: snowDepthUnitData,
+      temperature_2m: temperatureUnit,
+      precipitation: precipitationUnit,
+      relativehumidity_2m: humidityUnit,
+      windspeed_10m: windSpeedUnit,
+      snow_depth: snowDepthUnit,
     },
     hourly: {
       precipitation,
@@ -47,15 +47,16 @@ export const formatWeatherData = (weatherData) => {
     },
   } = weatherData;
   return {
-    temperatureData: temperature[i],
-    temperatureUnitData,
-    precipitationData: precipitation[i],
-    precipitationUnitData,
-    humidityData: humidity[i],
-    humidityUnitData,
-    windSpeedData: windSpeed[i],
-    windSpeedUnitData,
-    snowDepthData: snowDepth[i],
-    snowDepthUnitData,
+    temperature: temperature[i],
+    temperatureUnit,
+    precipitation: precipitation[i],
+    precipitationUnit,
+    humidity: humidity[i],
+    humidityUnit,
+    windSpeed: windSpeed[i],
+    windSpeedUnit,
+    snowDepth: snowDepth[i],
+    snowDepthUnit,
+    weatherCode: weathercode[i],
   };
 };

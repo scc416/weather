@@ -1,18 +1,21 @@
 <template>
-  <CoverImage :code="1" />
+  <CoverImage :code="data.weatherCode" />
   <Rain v-if="true" />
   <div class="cover-gradient">
     <div class="wave"></div>
   </div>
+
   <div class="content">
-    {{ precipitation }}
-    <span class="unit">{{ precipitationUnit }}</span>
-    {{ humidity }}
-    <span class="unit">{{ humidityUnit }}</span>
-    {{ windSpeed }}
-    <span class="unit">{{ windSpeedUnit }}</span>
-    {{ snowDepth }}
-    <span class="unit">{{ snowDepthUnit }}</span>
+    {{ data.temperature }}
+    {{ data.temperatureUnit }}
+    {{ data.precipitation }}
+    <span class="unit">{{ data.precipitationUnit }}</span>
+    {{ data.humidity }}
+    <span class="unit">{{ data.humidityUnit }}</span>
+    {{ data.windSpeed }}
+    <span class="unit">{{ data.windSpeedUnit }}</span>
+    {{ data.snowDepth }}
+    <span class="unit">{{ data.snowDepthUnit }}</span>
   </div>
 </template>
 
@@ -20,10 +23,15 @@
 import getWeather from "./composables/getWeather";
 import Rain from "./components/cover/Rain.vue";
 import CoverImage from "./components/cover/CoverImage.vue";
+import { watchEffect } from "vue";
 
 export default {
   setup() {
     const data = getWeather();
+
+    watchEffect(() => {
+      if ("data" in data) console.log(data.data.value);
+    });
     return data;
   },
   components: { Rain, CoverImage },
@@ -55,6 +63,11 @@ body {
   left: -5vw;
   z-index: 0;
   color: #fff;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
 }
 
 .unit {
