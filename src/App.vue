@@ -1,18 +1,6 @@
 <template>
-  <Cover :code="weatherCode" />
-  <div class="content">
-    {{ data.temperature }}
-    {{ data.temperatureUnit }}
-    {{ data.location }}
-    {{ data.precipitation }}
-    {{ data.precipitationUnit }}
-    {{ data.humidity }}
-    {{ data.humidityUnit }}
-    {{ data.windSpeed }}
-    {{ data.windSpeedUnit }}
-    {{ data.snowDepth }}
-    {{ data.snowDepthUnit }}
-  </div>
+  <Cover v-if="data" :code="data.weatherCode" />
+  <Content :data="data" />
 </template>
 
 <script>
@@ -22,8 +10,8 @@ import Content from "./components/content/";
 
 export default {
   setup() {
-    const data = getWeather();
-    return data;
+    const { error, data } = getWeather();
+    return { error, data };
   },
   components: { Cover, Content },
 };
