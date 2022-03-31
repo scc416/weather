@@ -13,10 +13,9 @@
 import Header from "./Header.vue";
 
 const { data } = defineProps(["data"]);
-const { today, unit, weekly } = data;
+const { today, unit, weekly, location } = data;
 const {
   temperature,
-  location,
   weatherCode,
   // snowDepth,
   // windSpeed,
