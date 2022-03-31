@@ -6,6 +6,7 @@
   <div class="content">
     {{ data.temperature }}
     {{ data.temperatureUnit }}
+    {{ data.location }}
     {{ data.precipitation }}
     <span class="unit">{{ data.precipitationUnit }}</span>
     {{ data.humidity }}

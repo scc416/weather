@@ -18,6 +18,10 @@ export default {};
   color: #fff;
 }
 
+.wave {
+  height: 0;
+}
+
 .wave:before {
   border-bottom: 15vw solid #fff;
   content: "";
