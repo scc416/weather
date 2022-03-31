@@ -24,6 +24,7 @@ body {
   text-align: center;
   font-family: "Montserrat";
   width: 100vw;
+  background: #fcfcfc;
 }
 
 #app {
