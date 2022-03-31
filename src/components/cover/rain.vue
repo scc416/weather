@@ -1,5 +1,5 @@
 <template>
-  <img class="rain" src="../../assets/backgrounds/rain.png" alt="" />
+  <img src="../../assets/backgrounds/rain.png" alt="" />
 </template>
 
 <script>

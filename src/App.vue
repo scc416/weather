@@ -1,5 +1,5 @@
 <template>
-  <img class="cover" src="./assets/backgrounds/foggy.png" alt="" />
+  <CoverImage :code="1" />
   <Rain v-if="true" />
   <div class="cover-gradient">
     <div class="cover-gradient-top">
@@ -29,13 +29,14 @@
 <script>
 import getWeather from "./composables/getWeather";
 import Rain from "./components/cover/Rain.vue";
+import CoverImage from "./components/cover/CoverImage.vue";
 
 export default {
   setup() {
     const data = getWeather();
     return data;
   },
-  components: { Rain },
+  components: { Rain, CoverImage },
 };
 </script>
 
@@ -49,11 +50,6 @@ body {
 
 * {
   box-sizing: border-box;
-}
-
-.cover {
-  width: 100vw;
-  z-index: -2;
 }
 
 .cover-gradient {
