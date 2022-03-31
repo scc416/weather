@@ -1,34 +1,34 @@
 <template>
   <div class="content">
     <Header
-      :temperature="data.temperature"
-      :temperatureUnit="data.temperatureUnit"
-      :location="data.location"
-      :weatherCode="data.weatherCode"
+      :temperature="temperature"
+      :temperatureUnit="temperatureUnit"
+      :location="location"
+      :weatherCode="weatherCode"
     />
     <div>
-      {{ data.precipitation }}
+      {{ precipitation }}
     </div>
     <div>
-      {{ data.precipitationUnit }}
+      {{ precipitationUnit }}
     </div>
     <div>
-      {{ data.humidity }}
+      {{ humidity }}
     </div>
     <div>
-      {{ data.humidityUnit }}
+      {{ humidityUnit }}
     </div>
     <div>
-      {{ data.windSpeed }}
+      {{ windSpeed }}
     </div>
     <div>
-      {{ data.windSpeedUnit }}
+      {{ windSpeedUnit }}
     </div>
     <div>
-      {{ data.snowDepth }}
+      {{ snowDepth }}
     </div>
     <div>
-      {{ data.snowDepthUnit }}
+      {{ snowDepthUnit }}
     </div>
   </div>
 </template>
@@ -36,7 +36,22 @@
 <script setup>
 import Header from "./Header.vue";
 
-defineProps(["data"]);
+const { data } = defineProps(["data"]);
+const { today } = data;
+const {
+  snowDepthUnit,
+  snowDepth,
+  windSpeed,
+  windSpeedUnit,
+  temperature,
+  temperatureUnit,
+  location,
+  precipitation,
+  precipitationUnit,
+  humidity,
+  humidityUnit,
+  weatherCode,
+} = today;
 </script>
 
 <style>

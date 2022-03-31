@@ -36,8 +36,15 @@ const getCurrentTimeIndex = ({ hourly: { time } }) => {
 };
 
 export const formatWeatherData = (weatherData) => {
+  console.log(weatherData);
   const i = getCurrentTimeIndex(weatherData);
   const {
+    daily: {
+      weathercode: weatherCodeWeek,
+      temperature_2m_max: temperatuceMax,
+      temperature_2m_min: temperatuceMin,
+      time: dateWeek,
+    },
     hourly_units: {
       temperature_2m: temperatureUnit,
       precipitation: precipitationUnit,
@@ -54,7 +61,10 @@ export const formatWeatherData = (weatherData) => {
       temperature_2m: temperature,
     },
   } = weatherData;
-  return {
+
+  const weekly = [];
+
+  const today = {
     temperature: temperature[i],
     temperatureUnit,
     precipitation: precipitation[i],
@@ -67,6 +77,8 @@ export const formatWeatherData = (weatherData) => {
     snowDepthUnit,
     weatherCode: weathercode[i],
   };
+
+  return { weekly, today };
 };
 
 export const getWeatherIcon = (code) => {
