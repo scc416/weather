@@ -6,30 +6,6 @@
       :location="location"
       :weatherCode="weatherCode"
     />
-    <div>
-      {{ precipitation }}
-    </div>
-    <div>
-      {{ precipitationUnit }}
-    </div>
-    <div>
-      {{ humidity }}
-    </div>
-    <div>
-      {{ humidityUnit }}
-    </div>
-    <div>
-      {{ windSpeed }}
-    </div>
-    <div>
-      {{ windSpeedUnit }}
-    </div>
-    <div>
-      {{ snowDepth }}
-    </div>
-    <div>
-      {{ snowDepthUnit }}
-    </div>
   </div>
 </template>
 
@@ -37,23 +13,23 @@
 import Header from "./Header.vue";
 
 const { data } = defineProps(["data"]);
-const { today, unit } = data;
+const { today, unit, weekly } = data;
 const {
-  snowDepth,
-  windSpeed,
   temperature,
   location,
-  precipitation,
-  humidity,
   weatherCode,
+  // snowDepth,
+  // windSpeed,
+  // precipitation,
+  // humidity,
 } = today;
 
 const {
-  snowDepthUnit,
-  windSpeedUnit,
   temperatureUnit,
-  precipitationUnit,
-  humidityUnit,
+  // snowDepthUnit,
+  // windSpeedUnit,
+  // precipitationUnit,
+  // humidityUnit,
 } = unit;
 </script>
 
