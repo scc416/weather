@@ -1,6 +1,6 @@
 <template>
-  <CoverImage :code="weatherCode" />
-  <Rain v-if="true" />
+  <CoverImage :code="code" />
+  <Rain v-if="rain" />
   <Wave />
 </template>
 
@@ -11,6 +11,7 @@ import CoverImage from "./CoverImage.vue";
 
 export default {
   components: { Rain, CoverImage, Wave },
+  props: ["code", "rain"],
 };
 </script>
 

@@ -1,9 +1,19 @@
 <template>
-  <img src="../../assets/backgrounds/foggy.png" alt="" />
+  <img :src="imageSource" alt="" />
 </template>
 
 <script>
-export default { props: ["code"] };
+import { computed } from "@vue/runtime-core";
+export default {
+  props: ["code"],
+  setup() {
+    const imageSource = computed(() => {
+      return require("../../assets/backgrounds/foggy.png");
+    });
+
+    return { imageSource };
+  },
+};
 </script>
 
 <style scoped>
