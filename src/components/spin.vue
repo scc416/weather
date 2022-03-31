@@ -1,11 +1,15 @@
 <template>
   <div class="fullscreen">
-    <span class="spin"></span>
+    <span v-if="!error" class="spin"></span>
+    <div v-else>
+      <div>ERROR</div>
+      <div>{{ error }}</div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default { props: ["error"] };
 </script>
 
 <style>
@@ -20,6 +24,7 @@ export default {};
   align-items: center;
   z-index: 1;
   background: #000;
+  color: #fff;
 }
 
 .spin {

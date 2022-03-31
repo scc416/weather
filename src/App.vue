@@ -1,7 +1,7 @@
 <template>
   <Cover :code="data && data.weatherCode" />
   <Content :data="data" />
-  <Spin v-if="!data" />
+  <Spin v-if="!data" :error="error" />
 </template>
 
 <script>
