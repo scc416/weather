@@ -1,6 +1,7 @@
 <template>
   <div class="header">
-    <div></div>
+    <div>
+    </div>
     <div class="temperature">
       <span>
         {{ temperature }}
@@ -19,17 +20,21 @@ export default {
 
 <style>
 .header {
-  height: 100vw;
+  height: 65vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+.header img {
+  width: 2.5em;
 }
 
 .temperature {
   position: relative;
   color: #e36968;
   font-size: 2.5em;
-  margin: 0.5em 0;
+  margin: 0.25em 0 0.1em;
   font-weight: 700;
 }
 
@@ -42,5 +47,6 @@ export default {
 
 .location {
   font-weight: 600;
+  margin-bottom: 2.5em;
 }
 </style>
