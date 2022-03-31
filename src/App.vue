@@ -1,6 +1,6 @@
 <template>
   <Cover :code="data && data.weatherCode" />
-  <Content :data="data" />
+  <Content v-if="data" :data="data" />
   <Spin v-if="!data" :error="error" />
 </template>
 

@@ -1,16 +1,16 @@
 <template>
   <div class="content">
-    {{ data && data.temperature }}
-    {{ data && data.temperatureUnit }}
-    {{ data && data.location }}
-    {{ data && data.precipitation }}
-    {{ data && data.precipitationUnit }}
-    {{ data && data.humidity }}
-    {{ data && data.humidityUnit }}
-    {{ data && data.windSpeed }}
-    {{ data && data.windSpeedUnit }}
-    {{ data && data.snowDepth }}
-    {{ data && data.snowDepthUnit }}
+    {{ data.temperature }}
+    {{ data.temperatureUnit }}
+    {{ data.location }}
+    {{ data.precipitation }}
+    {{ data.precipitationUnit }}
+    {{ data.humidity }}
+    {{ data.humidityUnit }}
+    {{ data.windSpeed }}
+    {{ data.windSpeedUnit }}
+    {{ data.snowDepth }}
+    {{ data.snowDepthUnit }}
   </div>
 </template>
 
