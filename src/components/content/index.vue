@@ -6,7 +6,9 @@
       :location="location"
       :weatherCode="weatherCode"
     />
-    <WeekList :data="weekly" :degree="temperatureUnit[0]" />
+    <div class="details">
+      <WeekList :data="weekly" :degree="temperatureUnit[0]" />
+    </div>
   </div>
 </template>
 
@@ -37,5 +39,9 @@ const {
 <style>
 .content {
   position: relative;
+}
+
+.details {
+  margin: 0 1em 1em;
 }
 </style>

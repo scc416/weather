@@ -14,7 +14,6 @@ const { data, degree } = defineProps(["data", "degree"]);
 .week-container {
   display: flex;
   overflow-x: scroll;
-  margin: 0 1em;
 }
 
 .week-container > *:first-child {
