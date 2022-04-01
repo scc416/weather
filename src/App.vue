@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <button @click="toggleUnit">Toggle</button>
-    <Content v-if="data" :data="data" />
+    <Content v-if="data" :data="data" :toggleUnit="toggleUnit"/>
     <Spin v-else :error="error" />
   </div>
 </template>
@@ -10,6 +9,7 @@
 import getWeather from "./composables/getWeather";
 import Content from "./components/content/";
 import Spin from "./components/spin.vue";
+import { watch } from "@vue/runtime-core";
 
 export default {
   setup() {
