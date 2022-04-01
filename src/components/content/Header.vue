@@ -5,7 +5,7 @@
       <span>
         {{ temperature }}
       </span>
-      <span class="unit"> {{ temperatureUnit }}</span>
+      <span class="temp-unit"> {{ temperatureUnit }}</span>
     </div>
     <div class="location">{{ location }}</div>
   </div>
@@ -51,7 +51,7 @@ const icon = getWeatherIcon(weatherCode);
   font-weight: 700;
 }
 
-.unit {
+.temp-unit {
   font-size: 0.6em;
   font-weight: 500;
   position: absolute;

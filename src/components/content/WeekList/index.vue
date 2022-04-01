@@ -13,13 +13,8 @@ const { data } = defineProps(["data"]);
 <style>
 .week-container {
   display: flex;
-  width: 100%;
   overflow-x: scroll;
-  margin: 0 2em;
-}
-
-.week-container > * {
-  margin: 0.5em;
+  margin: 0 1.5em;
 }
 
 .week-container > *:first-child {

@@ -12,7 +12,7 @@
 
 <script setup>
 import Header from "./Header.vue";
-import WeekList from "./WeekList/"
+import WeekList from "./WeekList/";
 
 const { data } = defineProps(["data"]);
 const { today, unit, weekly, location } = data;
