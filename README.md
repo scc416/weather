@@ -11,6 +11,8 @@ optional: humidity, rainfall, snowdepth, wind speed, apparent temperature
 
 ## Credits
 
+- [Design](https://www.behance.net/gallery/140114835/Clima-Status) from [Clima Status](https://www.behance.net/celesteortman) on [Behance](https://www.behance.net/)
+
 ## Project setup
 
 ```
