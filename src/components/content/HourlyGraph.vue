@@ -7,44 +7,10 @@
 <script setup>
 import { defineComponent, ref } from "vue";
 import JSCharting, { JSC } from "jscharting-vue";
+import getGraphOptions from "@/composables/getGraphOptions";
+const { data, unit } = defineProps(["data", "unit"]);
 
-const { data } = defineProps(["data"]);
-
-const chartOptions = ref({
-  type: "line spline",
-  width: 1200,
-  legend_visible: false,
-  xAxis: {
-    scale: {
-      type: "time",
-      interval: {
-        unit: "hour",
-        multiplier: 1,
-      },
-    },
-    orientation: "top",
-  },
-  yAxis_visible: false,
-  series: [
-    {
-      points: data,
-    },
-  ],
-  defaultSeries_mouseTracking_enabled: false,
-  palette: ["#EB7F7F"],
-  defaultPoint: {
-    label: {
-      visible: true,
-      text: "%value°C",
-      align: "center",
-    },
-    marker: {
-      size: 8,
-      type: "circle",
-      outline_width: 0,
-    },
-  },
-});
+const chartOptions = getGraphOptions(data, unit);
 </script>
 
 <style>

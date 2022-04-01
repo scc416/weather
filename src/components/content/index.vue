@@ -8,7 +8,7 @@
     />
     <div class="details">
       <WeekList :data="weekly" :degree="temperatureUnit[0]" />
-      <HourlyGraph :data="hourly" />
+      <HourlyGraph :data="hourly" :unit="temperatureUnit" />
     </div>
   </div>
 </template>
