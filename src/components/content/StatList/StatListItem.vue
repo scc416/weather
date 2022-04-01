@@ -1,7 +1,17 @@
-<template>{{ value }}{{ unit }}</template>
+<template>
+  <div>
+    {{ value }}{{ unit }}{{ name }}
+    <component :is="component" />
+  </div>
+</template>
 
 <script setup>
-const { value, unit } = defineProps(["value", "unit"]);
+const { value, unit, name, component } = defineProps([
+  "value",
+  "unit",
+  "name",
+  "component",
+]);
 </script>
 
 <style>
