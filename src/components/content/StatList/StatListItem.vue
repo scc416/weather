@@ -1,13 +1,8 @@
-<template>
-  
-</template>
+<template>{{ value }}{{ unit }}</template>
 
-<script>
-export default {
-
-}
+<script setup>
+const { value, unit } = defineProps(["value", "unit"]);
 </script>
 
 <style>
-
 </style>
