@@ -6,6 +6,7 @@ import {
   formatLocationStr,
   formatWeatherData,
 } from "@/helpers";
+import { geoLocationOptions } from "@/constants";
 
 const getWeather = () => {
   const error = ref("");
@@ -31,7 +32,8 @@ const getWeather = () => {
         errorHandle(error, e);
       }
     },
-    (e) => errorHandle(error, e)
+    (e) => errorHandle(error, e),
+    geoLocationOptions
   );
 
   const toggleUnit = () => {
