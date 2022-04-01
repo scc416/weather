@@ -6,12 +6,10 @@ import {
   formatLocationStr,
   formatWeatherData,
 } from "@/helpers";
-import { graphOptions } from "@/constants";
 
 const getWeather = () => {
   const error = ref("");
   const data = ref(null);
-  const options = ref(graphOptions);
   let dataCel = null;
   let dataFah = null;
   let isCelcius = true;
@@ -29,8 +27,6 @@ const getWeather = () => {
         data.value = { ...cel, location: formatLocationStr(location) };
         dataCel = data.value;
         dataFah = { ...fah, location: formatLocationStr(location) };
-        options.value.series = [{ points: dataCel.hourly }];
-        options.value.defaultPoint.label.text = `%value${dataCel.unit.temperatureUnit}`;
       } catch (e) {
         errorHandle(error, e);
       }
@@ -40,17 +36,11 @@ const getWeather = () => {
 
   const toggleUnit = () => {
     isCelcius = !isCelcius;
-    if (isCelcius) {
-      data.value = dataCel;
-      options.value.series = [{ points: dataCel.hourly }];
-      options.value.defaultPoint.label.text = `%value${dataCel.unit.temperatureUnit}`;
-    }
+    if (isCelcius) return (data.value = dataCel);
     data.value = dataFah;
-    options.value.series = [{ points: dataFah.hourly }];
-    options.value.defaultPoint.label.text = `%value${dataFah.unit.temperatureUnit}`;
   };
 
-  return { error, data, toggleUnit, options };
+  return { error, data, toggleUnit };
 };
 
 export default getWeather;
