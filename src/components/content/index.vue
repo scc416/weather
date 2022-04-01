@@ -6,36 +6,19 @@
       :location="location"
       :weatherCode="weatherCode"
     />
-    <div class="details">
-      <WeekList :data="weekly" :degree="temperatureUnit[0]" />
-      <HourlyGraph :data="hourly" :unit="temperatureUnit" />
-    </div>
+    <Details :data="data" />
   </div>
 </template>
 
 <script setup>
 import Header from "./Header.vue";
-import WeekList from "./WeekList/";
-import HourlyGraph from "./HourlyGraph.vue";
+import Details from "./Details.vue";
 
 const { data } = defineProps(["data"]);
-const { today, unit, weekly, location, hourly } = data;
-const {
-  temperature,
-  weatherCode,
-  // snowDepth,
-  // windSpeed,
-  // precipitation,
-  // humidity,
-} = today;
 
-const {
-  temperatureUnit,
-  // snowDepthUnit,
-  // windSpeedUnit,
-  // precipitationUnit,
-  // humidityUnit,
-} = unit;
+const { today, unit, location } = data;
+const { temperature, weatherCode } = today;
+const { temperatureUnit } = unit;
 </script>
 
 <style>
