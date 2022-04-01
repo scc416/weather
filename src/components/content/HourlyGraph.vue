@@ -12,7 +12,7 @@ const { data } = defineProps(["data"]);
 
 const chartOptions = ref({
   type: "line spline",
-  width: 1000,
+  width: 1200,
   legend_visible: false,
   xAxis: {
     scale: {
