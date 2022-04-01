@@ -7,6 +7,56 @@ import DrizzleIcon from "vue-material-design-icons/WeatherRainy.vue";
 import RainIcon from "vue-material-design-icons/WeatherPouring.vue";
 import SnowIcon from "vue-material-design-icons/Snowflake.vue";
 import ThunderIcon from "vue-material-design-icons/WeatherLightning.vue";
+import TemperatureIcon from "vue-material-design-icons/Thermometer.vue";
+import PrecipitationIcon from "vue-material-design-icons/Water.vue";
+import WindIcon from "vue-material-design-icons/WeatherWindy.vue";
+import HumidIcon from "vue-material-design-icons/WaterPercent.vue";
+
+export const formatStatsProps = (today, unit) => {
+  const { snowDepth, windSpeed, precipitation, humidity, apparentTemp } = today;
+  const {
+    snowDepthUnit,
+    windSpeedUnit,
+    precipitationUnit,
+    humidityUnit,
+    temperatureUnit,
+  } = unit;
+
+  const stats = [
+    {
+      name: "Feels like",
+      value: apparentTemp,
+      unit: temperatureUnit,
+      component: TemperatureIcon,
+    },
+    {
+      name: "Precipitation",
+      value: precipitation,
+      unit: precipitationUnit,
+      component: PrecipitationIcon,
+    },
+    {
+      name: "Wind Speed",
+      value: windSpeed,
+      unit: windSpeedUnit,
+      component: WindIcon,
+    },
+    {
+      name: "Humidity",
+      value: humidity,
+      unit: humidityUnit,
+      component: HumidIcon,
+    },
+    {
+      name: "Snow Depth",
+      value: snowDepth,
+      unit: snowDepthUnit,
+      component: SnowIcon,
+    },
+  ];
+
+  return stats;
+};
 
 export const errorHandle = (eRef, error) => {
   const { message } = error;
