@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <button @click="toggleUnit">Toggle</button>
     <Content v-if="data" :data="data" />
     <Spin v-else :error="error" />
   </div>
@@ -10,7 +11,7 @@ import getWeather from "./composables/getWeather";
 import Content from "./components/content/";
 import Spin from "./components/spin.vue";
 
-const { error, data } = getWeather();
+const { error, data, toggleUnit } = getWeather();
 </script>
 
 <style>

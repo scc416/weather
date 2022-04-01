@@ -1,5 +1,3 @@
-export const geoLocationOptions = { timeout: 10000 };
-
 export const graphOptions = {
   type: "line spline",
   width: 1200,
