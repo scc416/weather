@@ -8,41 +8,47 @@ import JSCharting, { JSC } from "jscharting-vue";
 
 const names = ["SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI"];
 
-// names.forEach(function(v, i) {
-//   names.push(
-//     days[i] +
-//       ' ' +
-//       (i + 1) +
-//       '<br><icon name=' +
-//       weatherIcons[i] +
-//       ' size=34 verticalAlign=center margin_right=4 color=#cfd8dc>'
-//   );
-// });
-
 function tickLabelText(v) {
   return names[v];
 }
 
 const chartOptions = ref({
   type: "line spline",
-  yAxis_visible: false,
+  legend_visible: false,
   xAxis: {
-    defaultTick: {
-      gridLine_visible: false,
-      line_visible: false,
-      label: {
-        text: tickLabelText,
-        style: {
-          fontWeight: "bold",
-          color: "#000",
-          fontSize: 14,
-        },
+    scale: {
+      type: "time",
+      interval: {
+        unit: "hour",
+        multiplier: 1,
       },
     },
-    line_visible: false,
     orientation: "top",
   },
-  legend_visible: false,
+  yAxis_visible: false,
+  series: [
+    {
+      points: [
+        { x: "3/31/2022 01:00", y: 67 },
+        { x: "3/31/2022 02:00", y: 72 },
+        { x: "3/31/2022 03:00", y: 66 },
+        { x: "3/31/2022 04:00", y: 84 },
+        { x: "3/31/2022 05:00", y: 74 },
+        { x: "3/31/2022 06:00", y: 72 },
+        { x: "3/31/2022 07:00", y: 84 },
+        { x: "3/31/2022 08:00", y: 50 },
+        { x: "3/31/2022 09:00", y: 50 },
+        { x: "3/31/2022 10:00", y: 50 },
+        { x: "3/31/2022 11:00", y: 50 },
+        { x: "3/31/2022 12:00", y: 50 },
+        { x: "3/31/2022 13:00", y: 50 },
+        { x: "3/31/2022 14:00", y: 50 },
+        { x: "3/31/2022 15:00", y: 50 },
+      ],
+    },
+  ],
+  defaultSeries_mouseTracking_enabled: false,
+  palette: ["#EB7F7F"],
   defaultPoint: {
     label: {
       visible: true,
@@ -55,21 +61,5 @@ const chartOptions = ref({
       outline_width: 0,
     },
   },
-  defaultSeries_mouseTracking_enabled: false,
-  palette: ["#eb7f7f", "#eb7f7f"],
-  series: [
-    {
-      points: [
-        { y: 31 },
-        { y: 31 },
-        { y: 29 },
-        { y: 29 },
-        { y: 30 },
-        { y: 29 },
-        { y: 30 },
-      ],
-    },
-  ],
-  toolbar_visible: false,
 });
 </script>
