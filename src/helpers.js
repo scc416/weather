@@ -36,17 +36,18 @@ export const formatStatsProps = (today, unit) => {
       component: PrecipitationIcon,
     },
     {
-      name: "Wind Speed",
-      value: windSpeed,
-      unit: windSpeedUnit,
-      component: WindIcon,
-    },
-    {
       name: "Humidity",
       value: humidity,
       unit: humidityUnit,
       component: HumidIcon,
     },
+    {
+      name: "Wind Speed",
+      value: windSpeed,
+      unit: windSpeedUnit,
+      component: WindIcon,
+    },
+
     {
       name: "Snow Depth",
       value: snowDepth,

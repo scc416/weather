@@ -1,8 +1,8 @@
 <template>
   <div class="details">
     <WeekList :data="weekly" :degree="temperatureUnit[0]" />
-    <HourlyGraph :data="hourly" :unit="temperatureUnit" />
     <StatList :today="today" :unit="unit" />
+    <HourlyGraph :data="hourly" :unit="temperatureUnit" />
   </div>
 </template>
 

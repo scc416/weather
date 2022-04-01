@@ -1,14 +1,23 @@
 <template>
-  <div>
+  <div v-if="show">
     <div><component :is="component" /></div>
     <div class="stats-name">{{ name }}</div>
-    <div class="value">{{ value }}{{ unit }}</div>
+    <div class="value">
+      {{ value }}
+      <span class="unit">{{ unit }}</span>
+    </div>
   </div>
 </template>
 
 <script setup>
+const { computed } = require("@vue/runtime-core");
+
 const { data } = defineProps(["data"]);
 const { value, unit, name, component } = data;
+const show = computed(() => {
+  const isSnowDepth = name === "Snow Depth";
+  return !isSnowDepth || value;
+});
 </script>
 
 <style>
