@@ -17,9 +17,15 @@ const stats = formatStatsProps(today, unit);
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  padding: 1%;
 }
 
 .stat-container > * {
-  width: 50%;
+  width: 46%;
+  margin: 2%;
+}
+
+.stat-container > * > * {
+  margin: 0.3em;
 }
 </style>

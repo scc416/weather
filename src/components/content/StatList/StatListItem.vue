@@ -1,7 +1,8 @@
 <template>
   <div>
-    {{ value }}{{ unit }}{{ name }}
-    <component :is="component" />
+    <div><component :is="component" /></div>
+    <div class="stats-name">{{ name }}</div>
+    <div class="value">{{ value }}{{ unit }}</div>
   </div>
 </template>
 
@@ -11,4 +12,11 @@ const { value, unit, name, component } = data;
 </script>
 
 <style>
+.value {
+  color: #ec5c5b;
+}
+
+.stats-name {
+  font-size: 0.8em;
+}
 </style>
