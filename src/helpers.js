@@ -54,9 +54,8 @@ const makeHourlyWeatherDate = (index, time, temperature, weathercode) => {
   for (let i = index; i < index + 24; i++) {
     const data = {
       weatherCode: weathercode[i],
-      // maxTemp: maxT[i],
-      // minTemp: minT[i],
-      // time: i === 0 ? "Now" : moment(time[i]).format("ddd"),
+      temp: temperature[i],
+      time: i === index ? "Now" : moment(time[i]).format("ha"),
     };
     result.push(data);
   }
@@ -100,6 +99,7 @@ export const formatWeatherData = (weatherData) => {
 
   const hourly = makeHourlyWeatherDate(i, time, temperature, weathercode);
 
+  console.log(hourly);
   const today = {
     temperature: temperature[i],
     precipitation: precipitation[i],
