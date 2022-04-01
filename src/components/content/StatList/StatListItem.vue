@@ -6,12 +6,8 @@
 </template>
 
 <script setup>
-const { value, unit, name, component } = defineProps([
-  "value",
-  "unit",
-  "name",
-  "component",
-]);
+const { data } = defineProps(["data"]);
+const { value, unit, name, component } = data;
 </script>
 
 <style>
