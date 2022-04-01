@@ -30,4 +30,11 @@ const {
 </script>
 
 <style>
+.details {
+  margin: 0 1em 1em;
+}
+
+.details > * {
+  margin-top: 1em;
+}
 </style>

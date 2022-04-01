@@ -25,8 +25,4 @@ const { temperatureUnit } = unit;
 .content {
   position: relative;
 }
-
-.details {
-  margin: 0 1em 1em;
-}
 </style>
