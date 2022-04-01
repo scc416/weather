@@ -10,36 +10,26 @@ A simple weather app.
 - [Getting Started](#getting-started)
 - [Credits](#credits)
 
-- show current weather condition
-- current temperature
-- daily temperature for the coming week
-- show hourly temperature for next 24 hours as line graph with sunset/sunrise
+## Live Demo
 
-optional: humidity, rainfall, snowdepth, wind speed, apparent temperature
+The web app is deployed to [Netlify](https://www.netlify.com): https://the-weather-vue.netlify.app/
+
+## Dependencies
+
+- [Vue.js](https://vuejs.org/)
+- [axios](https://axios-http.com/)
+- [moment.js](https://momentjs.com/)
+- [vue-material-design-icons](https://github.com/robcresswell/vue-material-design-icons)
+
+## Getting Started
+
+1. Clone or download this repository onto your local device.
+2. `cd` to the folder where this project is cloned.
+3. Install all dependencies with `npm install` command.
+4. Run the app in the development mode with `npm run serve` command.
+5. Open the broswer and visit: [http://localhost:8080/](http://localhost:8080/).
 
 ## Credits
 
 - [Design](https://www.behance.net/gallery/140114835/Clima-Status) from [Clima Status](https://www.behance.net/celesteortman) on [Behance](https://www.behance.net/)
 - [Icon](https://www.flaticon.com/free-icons/rain) by [iconixar](https://www.flaticon.com/authors/iconixar) from [Flaticon](https://www.flaticon.com/)
-
-## Project setup
-
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
