@@ -12,11 +12,18 @@ A simple weather app.
 
 ## Live Demo
 
-The web app is deployed to [Netlify](https://www.netlify.com): https://the-weather-vue.netlify.app/
+The web app is deployed to [Netlify](https://www.netlify.com):  
+https://the-weather-vue.netlify.app/
+
+## Final Product
+
+![desktop](./docs/desktop.png)
+![phone](./docs/phone.png)
 
 ## Dependencies
 
 - [Vue.js](https://vuejs.org/)
+- [jscharting-vue](https://jscharting.com/)
 - [axios](https://axios-http.com/)
 - [moment.js](https://momentjs.com/)
 - [vue-material-design-icons](https://github.com/robcresswell/vue-material-design-icons)
