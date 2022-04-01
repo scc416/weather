@@ -114,7 +114,6 @@ const makeHourlyWeatherDate = (index, time, temperature) => {
 
 export const formatWeatherData = (weatherData) => {
   const i = getCurrentTimeIndex(weatherData);
-  console.log(weatherData);
   const {
     daily: {
       weathercode: weatherCodeWeek,
