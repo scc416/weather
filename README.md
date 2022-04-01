@@ -1,6 +1,14 @@
 # Weather
 
-## things to displayed
+A simple weather app.
+
+## Table of Content
+
+- [Live Demo](#live-demo)
+- [Final Product](#final-product)
+- [Dependencies](#dependencies)
+- [Getting Started](#getting-started)
+- [Credits](#credits)
 
 - show current weather condition
 - current temperature
@@ -12,6 +20,7 @@ optional: humidity, rainfall, snowdepth, wind speed, apparent temperature
 ## Credits
 
 - [Design](https://www.behance.net/gallery/140114835/Clima-Status) from [Clima Status](https://www.behance.net/celesteortman) on [Behance](https://www.behance.net/)
+- [Icon](https://www.flaticon.com/free-icons/rain) by [iconixar](https://www.flaticon.com/authors/iconixar) from [Flaticon](https://www.flaticon.com/)
 
 ## Project setup
 
