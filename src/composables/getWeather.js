@@ -11,17 +11,23 @@ import { geoLocationOptions } from "@/constants";
 const getWeather = () => {
   const error = ref("");
   const data = ref(null);
+  let dataCel = null;
+  let dataFah = null;
 
   navigator.geolocation.getCurrentPosition(
     async (position) => {
-      const { weatherUrl, locationUrl } = getUrls(position);
+      const { weatherUrl, locationUrl, weatherUrlFah } = getUrls(position);
 
       try {
         const { data: weather } = await axios.get(weatherUrl);
         const { data: location } = await axios.get(locationUrl);
+        const { data: weatherFah } = await axios.get(weatherUrlFah);
 
-        const weatherData = formatWeatherData(weather);
-        data.value = { ...weatherData, location: formatLocationStr(location) };
+        const { cel, fah } = formatWeatherData(weather, weatherFah);
+        data.value = { ...cel, location: formatLocationStr(location) };
+        dataCel = cel;
+        dataFah = fah;
+        console.log(dataFah);
       } catch (e) {
         errorHandle(error, e);
       }

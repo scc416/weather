@@ -69,8 +69,9 @@ export const getUrls = (position) => {
   const { latitude: lat, longitude: long } = coords;
   const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
   const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation,weathercode,snow_depth,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=${timeZone}`;
+  const weatherUrlFah = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=${timeZone}`;
   const locationUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`;
-  return { weatherUrl, locationUrl };
+  return { weatherUrl, weatherUrlFah, locationUrl };
 };
 
 export const formatLocationStr = ({ countryName, city }) => {
@@ -100,6 +101,7 @@ const makeWeeklyWeatherDate = (code, maxT, minT, time) => {
   }
   return result;
 };
+
 const makeHourlyWeatherDate = (index, time, temperature) => {
   const result = [];
   for (let i = index; i < index + 24; i++) {
@@ -112,7 +114,44 @@ const makeHourlyWeatherDate = (index, time, temperature) => {
   return result;
 };
 
-export const formatWeatherData = (weatherData) => {
+const makeFahData = (cel, fah, dateWeek, weatherCodeWeek, i, time) => {
+  const {
+    daily: { temperature_2m_max: maxTempFah, temperature_2m_min: minTempFah },
+    hourly_units: { temperature_2m: temperatureUnitFah },
+    hourly: {
+      temperature_2m: temperatureFah,
+      apparent_temperature: apparentTempFah,
+    },
+  } = fah;
+
+  const { today, unit } = cel;
+
+  const weeklyFah = makeWeeklyWeatherDate(
+    weatherCodeWeek,
+    maxTempFah,
+    minTempFah,
+    dateWeek
+  );
+
+  const hourlyFah = makeHourlyWeatherDate(i, time, temperatureFah);
+
+  const todayFah = {
+    ...today,
+    temperature: temperatureFah[i],
+    apparentTemp: apparentTempFah[i],
+  };
+
+  const unitFah = { ...unit, temperatureUnit: temperatureUnitFah };
+
+  return {
+    weekly: weeklyFah,
+    today: todayFah,
+    hourly: hourlyFah,
+    unit: unitFah,
+  };
+};
+
+export const formatWeatherData = (weatherData, weatherFah) => {
   const i = getCurrentTimeIndex(weatherData);
   const {
     daily: {
@@ -167,7 +206,11 @@ export const formatWeatherData = (weatherData) => {
     snowDepthUnit,
   };
 
-  return { weekly, today, hourly, unit };
+  const cel = { weekly, today, hourly, unit };
+
+  const fah = makeFahData(cel, weatherFah, dateWeek, weatherCodeWeek, i, time);
+
+  return { cel, fah };
 };
 
 export const getWeatherIcon = (code) => {
