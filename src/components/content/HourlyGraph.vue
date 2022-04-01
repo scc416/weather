@@ -8,16 +8,16 @@ import JSCharting, { JSC } from "jscharting-vue";
 
 const names = ["SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI"];
 
-// names.forEach(function(v, i) { 
-//   names.push( 
-//     days[i] + 
-//       ' ' + 
-//       (i + 1) + 
-//       '<br><icon name=' + 
-//       weatherIcons[i] + 
+// names.forEach(function(v, i) {
+//   names.push(
+//     days[i] +
+//       ' ' +
+//       (i + 1) +
+//       '<br><icon name=' +
+//       weatherIcons[i] +
 //       ' size=34 verticalAlign=center margin_right=4 color=#cfd8dc>'
-//   ); 
-// }); 
+//   );
+// });
 
 function tickLabelText(v) {
   return names[v];
@@ -34,7 +34,7 @@ const chartOptions = ref({
         text: tickLabelText,
         style: {
           fontWeight: "bold",
-          color: "#546e7a",
+          color: "#000",
           fontSize: 14,
         },
       },
@@ -56,17 +56,17 @@ const chartOptions = ref({
     },
   },
   defaultSeries_mouseTracking_enabled: false,
-  palette: ["#ffb74d", "#64b5f6"],
+  palette: ["#eb7f7f", "#eb7f7f"],
   series: [
     {
       points: [
-        { x: "SAT 1", y: 31 },
-        { x: "SUN 2", y: 31 },
-        { x: "MON 3", y: 29 },
-        { x: "TUE 4", y: 29 },
-        { x: "WED 5", y: 30 },
-        { x: "THU 6", y: 29 },
-        { x: "FRI 7", y: 30 },
+        { y: 31 },
+        { y: 31 },
+        { y: 29 },
+        { y: 29 },
+        { y: 30 },
+        { y: 29 },
+        { y: 30 },
       ],
     },
   ],

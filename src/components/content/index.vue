@@ -8,7 +8,7 @@
     />
     <div class="details">
       <WeekList :data="weekly" :degree="temperatureUnit[0]" />
-      <Graph />
+      <HourlyGraph />
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@
 <script setup>
 import Header from "./Header.vue";
 import WeekList from "./WeekList/";
-import Graph from "./Graph.vue";
+import HourlyGraph from "./HourlyGraph.vue";
 
 const { data } = defineProps(["data"]);
 const { today, unit, weekly, location } = data;
