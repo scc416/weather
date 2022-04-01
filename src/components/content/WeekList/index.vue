@@ -1,20 +1,20 @@
 <template>
   <div class="week-container">
-    <WeekListItem v-for="day in data" :data="day" />
+    <WeekListItem v-for="day in data" :data="day" :degree="degree" />
   </div>
 </template>
 
 <script setup>
 import WeekListItem from "./WeekListItem.vue";
 
-const { data } = defineProps(["data"]);
+const { data, degree } = defineProps(["data", "degree"]);
 </script>
 
 <style>
 .week-container {
   display: flex;
   overflow-x: scroll;
-  margin: 0 1.5em;
+  margin: 0 1em;
 }
 
 .week-container > *:first-child {

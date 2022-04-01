@@ -6,7 +6,7 @@
       :location="location"
       :weatherCode="weatherCode"
     />
-    <WeekList :data="weekly" />
+    <WeekList :data="weekly" :degree="temperatureUnit[0]" />
   </div>
 </template>
 

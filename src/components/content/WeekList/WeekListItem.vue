@@ -4,12 +4,12 @@
     <component :is="icon" />
     <div class="max-min-temp">
       <div>
-        <div>Min.</div>
-        <div>{{ minTemp }}</div>
+        <div>Min</div>
+        <div>{{ minTemp }}{{ degree }}</div>
       </div>
       <div>
-        <div>Max.</div>
-        <div>{{ maxTemp }}</div>
+        <div>Max</div>
+        <div>{{ maxTemp }}{{ degree }}</div>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
 <script setup>
 import { getWeatherIcon } from "@/helpers";
 
-const { data } = defineProps(["data", "unit"]);
+const { data, degree } = defineProps(["data", "degree"]);
 const { weatherCode, maxTemp, minTemp, day } = data;
 const icon = getWeatherIcon(weatherCode);
 </script>
@@ -26,14 +26,15 @@ const icon = getWeatherIcon(weatherCode);
 <style>
 .weekly-elm {
   color: #fff;
-  margin: 0.5em;
-  padding: 0.7em 0.8em;
+  margin: 0.3em;
+  padding: 0.6em;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   min-height: 10em;
+  min-width: 5em;
 }
 
 .weekly-elm .material-design-icon {
@@ -47,12 +48,12 @@ const icon = getWeatherIcon(weatherCode);
 }
 
 .day {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 .max-min-temp {
   display: flex;
-  font-size: 0.8em;
+  font-size: 0.75em;
   width: 100%;
   justify-content: space-between;
 }
