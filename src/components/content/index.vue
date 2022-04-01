@@ -5,28 +5,16 @@
       :temperatureUnit="data.unit.temperatureUnit"
       :location="location"
       :weatherCode="weatherCode"
-      :clickHandler="clickHandler"
     />
-    <!-- <Details :data="data" :options="options" /> -->
+    <Details :data="data" />
   </div>
 </template>
 
 <script setup>
 import Header from "./Header.vue";
-import Details from "./Details/";
-import getGraphOptions from "@/composables/getGraphOptions";
+import Details from "./Details.vue";
 
-const { data, toggleUnit } = defineProps(["data", "toggleUnit"]);
-
-const { options, updateData } = getGraphOptions(
-  data.hourly,
-  data.unit.temperatureUnit
-);
-
-const clickHandler = () => {
-  toggleUnit();
-  updateData(data);
-};
+const { data } = defineProps(["data"]);
 
 const { today, unit, location } = data;
 const { weatherCode } = today;

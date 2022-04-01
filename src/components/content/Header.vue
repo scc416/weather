@@ -1,6 +1,5 @@
 <template>
   <div class="header">
-    <button @click="clickHandler">Toggle</button>
     <div class="weather-icon"><component :is="icon" /></div>
     <div class="temperature">
       <span>
@@ -20,7 +19,6 @@ const { weatherCode } = defineProps([
   "temperatureUnit",
   "location",
   "weatherCode",
-  "clickHandler",
 ]);
 
 const icon = getWeatherIcon(weatherCode);
