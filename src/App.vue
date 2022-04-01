@@ -1,6 +1,8 @@
 <template>
-  <Content v-if="data" :data="data" />
-  <Spin v-else :error="error" />
+  <div class="container">
+    <Content v-if="data" :data="data" />
+    <Spin v-else :error="error" />
+  </div>
 </template>
 
 <script setup>
@@ -25,7 +27,35 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  background: #fcfcfc;
+}
+
 * {
   box-sizing: border-box;
+}
+
+@media (min-width: 420px) {
+  body {
+    min-height: 100vh;
+    background: #f2e1e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    min-height: none;
+    background: #fcfcfc;
+    height: 667px;
+    width: 375px;
+    border-radius: 30px;
+    overflow-y: scroll;
+    padding: 1em;
+  }
+
+  #app {
+    padding: 2em 0;
+  }
 }
 </style>

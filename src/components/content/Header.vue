@@ -29,7 +29,7 @@ const icon = getWeatherIcon(weatherCode);
   height: 65vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .weather-icon .material-design-icon {
@@ -60,6 +60,11 @@ const icon = getWeatherIcon(weatherCode);
 
 .location {
   font-weight: 600;
-  margin-bottom: 2.5em;
+}
+
+@media (min-width: 420px) {
+  .header {
+    height: 273px;
+  }
 }
 </style>
