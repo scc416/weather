@@ -6,18 +6,12 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import getWeather from "./composables/getWeather";
 import Content from "./components/content/";
 import Spin from "./components/spin.vue";
 
-export default {
-  setup() {
-    const { error, data, toggleUnit } = getWeather();
-    return { error, data, toggleUnit };
-  },
-  components: { Content, Spin },
-};
+const { error, data, toggleUnit } = getWeather();
 </script>
 
 <style>
