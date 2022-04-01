@@ -43,7 +43,7 @@ const getWeather = () => {
     if (isCelcius) {
       data.value = dataCel;
       options.value.series = [{ points: dataCel.hourly }];
-      return (options.value.defaultPoint.label.text = `%value${dataCel.unit.temperatureUnit}`);
+      options.value.defaultPoint.label.text = `%value${dataCel.unit.temperatureUnit}`;
     }
     data.value = dataFah;
     options.value.series = [{ points: dataFah.hourly }];
