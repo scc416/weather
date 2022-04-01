@@ -13,7 +13,6 @@ const getWeather = () => {
   const data = ref(null);
   let dataCel = null;
   let dataFah = null;
-  let isCelcius = true;
 
   navigator.geolocation.getCurrentPosition(
     async (position) => {
@@ -26,8 +25,9 @@ const getWeather = () => {
 
         const { cel, fah } = formatWeatherData(weather, weatherFah);
         data.value = { ...cel, location: formatLocationStr(location) };
-        dataCel = data.value;
-        dataFah = { ...fah, location: formatLocationStr(location) };
+        dataCel = cel;
+        dataFah = fah;
+        console.log(dataFah);
       } catch (e) {
         errorHandle(error, e);
       }
@@ -36,13 +36,7 @@ const getWeather = () => {
     geoLocationOptions
   );
 
-  const toggleUnit = () => {
-    isCelcius = !isCelcius;
-    if (isCelcius) return (data.value = dataCel);
-    data.value = dataFah;
-  };
-
-  return { error, data, toggleUnit };
+  return { error, data };
 };
 
 export default getWeather;
