@@ -6,11 +6,13 @@
       :location="location"
       :weatherCode="weatherCode"
     />
+    <WeekList :data="weekly" />
   </div>
 </template>
 
 <script setup>
 import Header from "./Header.vue";
+import WeekList from "./WeekList/"
 
 const { data } = defineProps(["data"]);
 const { today, unit, weekly, location } = data;
