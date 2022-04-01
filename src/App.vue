@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <Content v-if="data" :data="data" :toggleUnit="toggleUnit"/>
+    <Content
+      v-if="data"
+      :data="data"
+      :toggleUnit="toggleUnit"
+      :options="options"
+    />
     <Spin v-else :error="error" />
   </div>
 </template>
@@ -13,8 +18,8 @@ import { watch } from "@vue/runtime-core";
 
 export default {
   setup() {
-    const { error, data, toggleUnit } = getWeather();
-    return { error, data, toggleUnit };
+    const { error, data, toggleUnit, options } = getWeather();
+    return { error, data, toggleUnit, options };
   },
   components: { Content, Spin },
 };
