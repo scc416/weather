@@ -49,13 +49,12 @@ const makeWeeklyWeatherDate = (code, maxT, minT, time) => {
   }
   return result;
 };
-const makeHourlyWeatherDate = (index, time, temperature, weathercode) => {
+const makeHourlyWeatherDate = (index, time, temperature) => {
   const result = [];
   for (let i = index; i < index + 24; i++) {
     const data = {
-      weatherCode: weathercode[i],
-      temp: temperature[i],
-      time: i === index ? "Now" : moment(time[i]).format("ha"),
+      y: temperature[i],
+      x: time[i],
     };
     result.push(data);
   }
@@ -97,7 +96,7 @@ export const formatWeatherData = (weatherData) => {
     dateWeek
   );
 
-  const hourly = makeHourlyWeatherDate(i, time, temperature, weathercode);
+  const hourly = makeHourlyWeatherDate(i, time, temperature);
 
   console.log(hourly);
   const today = {
