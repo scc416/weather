@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <Header
-      :temperature="data.today.temperature"
-      :temperatureUnit="data.unit.temperatureUnit"
+      :temperature="temperature"
+      :temperatureUnit="temperatureUnit"
       :location="location"
       :weatherCode="weatherCode"
     />
@@ -17,7 +17,8 @@ import Details from "./Details.vue";
 const { data } = defineProps(["data"]);
 
 const { today, unit, location } = data;
-const { weatherCode } = today;
+const { temperature, weatherCode } = today;
+const { temperatureUnit } = unit;
 </script>
 
 <style>
